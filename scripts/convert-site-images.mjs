@@ -20,6 +20,7 @@ const MAP = [
   ["ChatGPT Image May 14, 2026, 11_21_38 PM (2).png", "bpc-helix.jpg"],
   ["ChatGPT Image May 14, 2026, 11_21_43 PM (8).png", "bbg70-stone.jpg"],
   ["ChatGPT Image May 15, 2026, 12_04_52 AM.png", "hero-bubbles.jpg"],
+  ["ChatGPT Image May 15, 2026, 02_14_21 AM.png", "footer-helix.jpg"],
 ];
 
 await mkdir(DEST, { recursive: true });

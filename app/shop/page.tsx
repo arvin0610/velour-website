@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { CategoryFilter } from "@/components/category-filter";
 import { ProductCard } from "@/components/product-card";
 import { Masthead } from "@/components/masthead";
+import { CornerMarks } from "@/components/corner-marks";
 import { CATEGORIES, type CategoryId } from "@/lib/categories";
 import { productsInCategory } from "@/lib/products";
 
@@ -45,6 +46,7 @@ export default async function ShopPage({
                 "radial-gradient(circle at 20% 15%,rgba(216,195,165,0.12),transparent 26rem),radial-gradient(circle at 78% 0%,rgba(110,31,63,0.28),transparent 28rem)",
             }}
           />
+          <CornerMarks tone="rule" inset="1.5rem" size="1rem" />
           <div className="container-editorial relative pt-12">
             <Masthead />
           </div>

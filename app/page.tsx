@@ -15,6 +15,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { ProductCard } from "@/components/product-card";
 import { Masthead } from "@/components/masthead";
 import { ProductDataRow } from "@/components/product-data-row";
+import { CornerMarks } from "@/components/corner-marks";
+import { DocStamp } from "@/components/doc-stamp";
 import { getProduct } from "@/lib/products";
 
 const FEATURED_SLUGS = [
@@ -92,7 +94,15 @@ export default function HomePage() {
                   </h1>
                 </div>
                 <div className="rise" style={{ animationDelay: "120ms" }}>
-                  <div className="mt-10 flex flex-col gap-3 min-[420px]:flex-row sm:mt-12 sm:flex-wrap sm:items-center sm:gap-4">
+                  <p className="mt-6 max-w-2xl text-[1.02rem] leading-7 text-[color:var(--graphite)] sm:mt-8 sm:text-lg sm:leading-8">
+                    A premium, documentation-first catalog for qualified purchasers
+                    sourcing research-use peptides and related materials — clear lot
+                    records, thoughtful handling notes, and plain-language checkout
+                    guidance with no consumer-use claims.
+                  </p>
+                </div>
+                <div className="rise" style={{ animationDelay: "180ms" }}>
+                  <div className="mt-7 flex flex-col gap-3 min-[420px]:flex-row sm:mt-10 sm:flex-wrap sm:items-center sm:gap-4">
                     <Link
                       href="/shop"
                       className="btn btn-primary w-full min-[420px]:w-auto"
@@ -106,6 +116,23 @@ export default function HomePage() {
                     >
                       View COA library
                     </Link>
+                  </div>
+                </div>
+                <div className="rise" style={{ animationDelay: "240ms" }}>
+                  <div className="mt-7 grid max-w-2xl grid-cols-2 gap-2 sm:mt-12 md:grid-cols-4">
+                    {[
+                      "Lot-level records",
+                      "Research-use only",
+                      "Cold-chain care",
+                      "COA library",
+                    ].map((label) => (
+                      <div
+                        key={label}
+                        className="rounded-2xl border border-[color:var(--line-dark)] bg-white/58 px-3 py-3 font-mono text-[0.58rem] uppercase leading-relaxed tracking-[0.13em] text-[color:var(--graphite)] shadow-[0_16px_50px_-46px_rgba(74,55,33,0.58)] sm:px-4 sm:py-4 sm:text-[0.66rem]"
+                      >
+                        {label}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -205,6 +232,7 @@ export default function HomePage() {
           <div className="rise">
             <div className="relative overflow-hidden rounded-[2rem] border border-[color:var(--line-dark)] bg-[linear-gradient(135deg,rgba(255,255,255,0.72),rgba(243,231,213,0.92))] shadow-[0_28px_80px_-62px_rgba(74,55,33,0.58)]">
               <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-[color:var(--champagne)]/14 blur-3xl" />
+              <CornerMarks tone="champagne" inset="1.25rem" size="0.85rem" />
               <div className="relative grid items-stretch lg:grid-cols-[1.05fr_0.95fr]">
                 <div className="p-9 md:p-14 lg:p-16">
                   <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--line-dark)] px-4 py-1.5 font-mono text-[0.68rem] uppercase tracking-wider text-[color:var(--champagne)]">
@@ -442,6 +470,24 @@ export default function HomePage() {
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── CLOSING COLOPHON ───── */}
+        <section className="container-editorial pb-20 pt-16">
+          <div className="flex flex-col items-center gap-7 border-t border-dashed border-[color:var(--line-dark)] pt-12">
+            <div className="text-[color:var(--champagne)]">
+              <DocStamp size={104} date="MMXXVI" />
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-3 font-mono text-[0.6rem] uppercase tracking-[0.22em] text-[color:var(--graphite)]">
+              <span>Velour Research</span>
+              <span aria-hidden className="opacity-50">·</span>
+              <span>Documentation desk</span>
+              <span aria-hidden className="opacity-50">·</span>
+              <span>Indianapolis</span>
+              <span aria-hidden className="opacity-50">·</span>
+              <span className="text-[color:var(--champagne)]">MMXXVI · Sealed</span>
             </div>
           </div>
         </section>

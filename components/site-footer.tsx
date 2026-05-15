@@ -4,8 +4,35 @@ import { FOOTER_NAV } from "@/lib/nav";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[color:var(--line-dark)] bg-[#f4e8d7]">
-      <div className="container-editorial py-20">
+    <footer className="relative overflow-hidden border-t border-[color:var(--line-dark)] bg-[#f4e8d7]">
+      {/* Footer background photo */}
+      <Image
+        src="/images/site/footer-helix.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+      />
+      {/* Warm cream scrim — heavy enough to keep all the footer text & links legible */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg,rgba(244,232,215,0.88) 0%,rgba(244,232,215,0.78) 35%,rgba(244,232,215,0.82) 100%)",
+        }}
+      />
+      {/* Faint editorial light bloom in the top right */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 88% 12%,rgba(255,255,255,0.55),transparent 28rem)",
+        }}
+      />
+
+      <div className="container-editorial relative py-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <Link
